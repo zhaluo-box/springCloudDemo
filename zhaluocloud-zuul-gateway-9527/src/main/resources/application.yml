@@ -1,0 +1,35 @@
+server: 
+  port: 9527
+ 
+spring: 
+  application:
+    name: zhaluocloud-zuul-gateway
+ 
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka  
+  instance:
+    instance-id: zhaluocloud-9527.com
+    prefer-ip-address: true
+    
+#zuul:
+#  ignoredServices: '*'
+#  routes:
+#    path: /mydept/** 
+    
+zuul:
+  prefix: /zhaluo
+  ignored-services: "*"    #是一个set集合  是spring.application.name 的属性的集合  忽略所有就用"*" 代替
+  routes:  # 这是一个map
+    users: #/mydept/**
+       serviceId: zhaluocloud-dept    # users 是自定义的,名字可以随便起
+       path: /mydept/** 
+     
+ 
+info:
+  app.name: zhaluocloud
+  company.name: www.box.zhaluo.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
