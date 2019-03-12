@@ -58,6 +58,13 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- 监控 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-actuator</artifactId>
+                <version>1.5.9.RELEASE</version>
+            </dependency>
+
             <!-- mysql and alibaba 德鲁伊 and mybatis -->
             <dependency>
                 <groupId>mysql</groupId>
@@ -93,6 +100,8 @@
                 <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
+
+
 
         </dependencies>
     </dependencyManagement>

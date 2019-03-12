@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>zhaluocloud-eureka-7001</artifactId>
 	<name>eureka service</name>
-	<description>eureka 服务</description>
+	<description>eureka 服务端 注册中心</description>
 
 
 	<dependencies>
