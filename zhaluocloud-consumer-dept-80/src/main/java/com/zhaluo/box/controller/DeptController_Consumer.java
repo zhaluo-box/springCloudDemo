@@ -16,7 +16,7 @@ public class DeptController_Consumer {
 
     //private static final  String  REST_URL_PREFIX = "http://localhost:8001";
     
-    private static final String REST_URL_PREFIX = "http://ZHALUOCLOUD-DEPT";
+    private static final String REST_URL_PREFIX = "http://ZHALUOCLOUD-DEPT";  //服务名 -->spring.application.name
     
     @Autowired
     private RestTemplate restTemplate;

@@ -8,10 +8,12 @@ eureka:
     register-with-eureka: false     # false 表示不向注册中心注册自己。
     fetch-registry: false                # false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
     service-url:
-      #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
+      #    单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #    设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
+      #    prefer-same-zone-eureka: true
+      #    availability-zones: 不配置.默认使用defaultZone 配置
+      #    region:  不特别配置.默认是DEFAULT_REGION ,一个微服务只可以属于一个region
       defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/   # 想其它注册中心注册,方便同步
-  #    prefer-same-zone-eureka: true
-  #    availability-zones: 不配置.默认使用defaultZone 配置
-  #    region:  不特别配置.默认是DEFAULT_REGION ,一个微服务只可以属于一个region
- 
+  server:
+    enable-self-preservation: false  #关闭自我保护机制.确保可以把不可用的实例自我剔除
 
