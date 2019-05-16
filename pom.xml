@@ -24,6 +24,9 @@
         <module>zhaluocloud-config-client-3355</module>
         <module>zhaluocloud-config-dept-client-8001</module>
         <module>zhaluocloud-config-eureka-client-7001</module>
+        <module>zhaluocloud-eureka-7004</module>
+        <module>zhaluocloud-provide-dept-8004</module>
+        <module>zhaluocloud-consumer-dept-90</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -39,6 +42,7 @@
         <zhaluocloud.api.version>1.0-SNAPSHOT</zhaluocloud.api.version>
     </properties>
 
+    <!-- maven  版本管理 -->
     <dependencyManagement>
         <dependencies>
 
@@ -100,8 +104,6 @@
                 <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
-
-
 
         </dependencies>
     </dependencyManagement>
