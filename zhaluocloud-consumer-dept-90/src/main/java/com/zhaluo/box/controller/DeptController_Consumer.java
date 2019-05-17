@@ -14,7 +14,8 @@ import java.util.List;
 public class DeptController_Consumer {
 
     private static final  String  REST_URL_PREFIX = "http://localhost:8004";
-    
+
+    //结合ribbon 自动咨询服务列表
 //    private static final String REST_URL_PREFIX = "http://ZHALUOCLOUD-DEPT";  //服务名 -->spring.application.name
     
     @Autowired
@@ -42,6 +43,11 @@ public class DeptController_Consumer {
     @GetMapping(value = "/consumer/dept/list")
     public List<?> list() {
         return restTemplate.getForObject(REST_URL_PREFIX+"/dept/list", List.class);
+    }
+
+    @GetMapping("/consumer/dept/getClient")
+    public List<?> getClient(){
+        return restTemplate.getForObject(REST_URL_PREFIX+"/dept/client",List.class);
     }
 
 }

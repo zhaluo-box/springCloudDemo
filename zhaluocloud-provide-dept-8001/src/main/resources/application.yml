@@ -32,7 +32,6 @@ eureka:
   instance:
     instance-id: zhaluocloud-dept8001
     prefer-ip-address: true    #访问路径可以显示当前ip
-    
 info:
   app.name: zhaluocloud
   company.name: www.box.zhaluo.com

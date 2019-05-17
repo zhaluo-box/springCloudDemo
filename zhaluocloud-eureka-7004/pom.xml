@@ -12,6 +12,7 @@
     <artifactId>zhaluocloud-eureka-7004</artifactId>
 
     <name>zhaluocloud-eureka-7004</name>
+    <description> eureka 服务[注册中心7004]</description>
 
     <dependencies>
         <dependency>

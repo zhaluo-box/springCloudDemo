@@ -4,6 +4,8 @@ package com.zhaluo.box.controller;
 import com.zhaluo.box.api.entity.Dept;
 import com.zhaluo.box.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +15,9 @@ public class DeptController {
 
     @Autowired
     private DeptService service;
+
+    @Autowired
+    private DiscoveryClient client;
 
     @PostMapping(value = "/dept/add")
     public boolean add(@RequestBody Dept dept) {
@@ -27,6 +32,13 @@ public class DeptController {
     @GetMapping(value = "/dept/list")
     public List<Dept> list() {
         return service.list();
+    }
+
+    @GetMapping("/dept/client")
+    public List<?> getClient(){
+        List<String> services = client.getServices();
+        List<ServiceInstance> instances = client.getInstances(services.get(0));
+        return instances;
     }
 
 }

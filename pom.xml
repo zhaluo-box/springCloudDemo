@@ -109,7 +109,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>zhaluocloud</finalName>
+        <finalName>${project.artifactId}</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
