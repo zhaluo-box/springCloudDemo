@@ -27,6 +27,7 @@
         <module>zhaluocloud-eureka-7004</module>
         <module>zhaluocloud-provide-dept-8004</module>
         <module>zhaluocloud-consumer-dept-90</module>
+        <module>zhaluocloud-consumer-dept-feign-91</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,5 +1,6 @@
 package com.zhaluo.box.api.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -29,6 +30,13 @@ public class DeptClientServiceFallbackFactory implements FallbackFactory<DeptCli
             @Override
             public boolean add(Dept dept) {
                 return false;
+            }
+
+            @Override
+            public List<?> clientList() {
+                ArrayList<Object> list = new ArrayList<>();
+                list.add(" list is null");
+                return list;
             }
         };
 

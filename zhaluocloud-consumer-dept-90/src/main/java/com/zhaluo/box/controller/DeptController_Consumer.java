@@ -13,10 +13,10 @@ import java.util.List;
 @RestController
 public class DeptController_Consumer {
 
-    private static final  String  REST_URL_PREFIX = "http://localhost:8004";
+//    private static final  String  REST_URL_PREFIX = "http://localhost:8004";
 
-    //结合ribbon 自动咨询服务列表
-//    private static final String REST_URL_PREFIX = "http://ZHALUOCLOUD-DEPT";  //服务名 -->spring.application.name
+    //结合ribbon 自动咨询服务列表 这里可以采用el表达式注入进来
+    private static final String REST_URL_PREFIX = "http://ZHALUOCLOUD-DEPT";  //服务名 -->spring.application.name
     
     @Autowired
     private RestTemplate restTemplate;

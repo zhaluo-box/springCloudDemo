@@ -8,6 +8,7 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -35,10 +36,14 @@ public class DeptController {
     }
 
     @GetMapping("/dept/client")
-    public List<?> getClient(){
+    public List<?> getClient() {
         List<String> services = client.getServices();
-        List<ServiceInstance> instances = client.getInstances(services.get(0));
-        return instances;
+//        List<ServiceInstance> instances = client.getInstances(services.get(0));
+        List<List<ServiceInstance>> list = new ArrayList<>();
+        services.forEach(t ->
+                list.add(client.getInstances(t))
+        );
+        return list;
     }
 
 }

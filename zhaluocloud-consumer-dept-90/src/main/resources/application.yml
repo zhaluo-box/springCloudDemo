@@ -1,13 +1,18 @@
 server:
   port: 90
 
-#eureka:
-#  client:
-#    register-with-eureka: false
-#    service-url:
-spring:
-  devtools:
-    restart:
-      enabled: true
 
-#      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+eureka:
+  client:
+    register-with-eureka: true  # 很多时候服务既是消费者也是提供者
+    fetch-registry: true # 向服务端咨询服务列表
+    service-url:
+      defaultZone: http://eureka7004.com:7004/eureka/,http://eureka7005.com:7005/eureka/,http://eureka7006.com:7006/eureka/
+  instance:
+    instance-id: ${project.artifactId}:${server.port}
+    prefer-ip-address: true    #访问路径可以显示当前ip
+    lease-expiration-duration-in-seconds: 90  #服务失效的时间
+    lease-renewal-interval-in-seconds: 30  # 服务续约调用时间间隔
+spring:
+  application:
+    name: zhaluocloud-consumer
