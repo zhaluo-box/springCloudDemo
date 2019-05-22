@@ -1,6 +1,5 @@
-
 server:
-  port: 8004
+  port: 6001
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
@@ -14,7 +13,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
-    url: jdbc:mysql://127.0.0.1:3306/clouddb04              # 数据库名称
+    url: jdbc:mysql://localhost:3306/clouddb01              # 数据库名称
     username: root
     password: root
     dbcp2:
@@ -25,27 +24,20 @@ spring:
 
 eureka:
   client: #客户端注册进eureka服务列表内
+    register-with-eureka: true
     service-url:
-    #注册的多台服务器的地址.多台地址之间用 "逗号" 分割
+      #注册的三台服务器的地址.多台地址之间用 "逗号" 分割
       defaultZone: http://eureka7004.com:7004/eureka/,http://eureka7005.com:7005/eureka/,http://eureka7006.com:7006/eureka/
-    registry-fetch-interval-seconds: 30  # 服务缓存清单更新时间
 
-  #      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: ${project.artifactId}:${server.port}
+    instance-id: zhaluocloud-dept-hystrix8001
     prefer-ip-address: true    #访问路径可以显示当前ip
-    lease-expiration-duration-in-seconds: 90  #服务失效的时间
-    lease-renewal-interval-in-seconds: 30  # 服务续约调用时间间隔
 
-#
 info:
   app.name: zhaluocloud
   company.name: www.box.zhaluo.com
   build.artifactId: ${project.artifactId}
   build.version: ${project.version}
 
-#  devtools:
-#    restart:
-#      enabled: true # 开启
-#      additional-paths: src/main/java # 重启的目录
+
 

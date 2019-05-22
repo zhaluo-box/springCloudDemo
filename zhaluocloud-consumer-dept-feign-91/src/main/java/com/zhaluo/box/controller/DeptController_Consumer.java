@@ -3,6 +3,7 @@ package com.zhaluo.box.controller;
 import com.zhaluo.box.api.entity.Dept;
 import com.zhaluo.box.api.service.DeptClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ public class DeptController_Consumer {
 
        
     @Autowired
-    private DeptClientService service = null;
+    private DeptClientService service;
     
     @RequestMapping(value = "/consumer/dept/get/{id}")
     public Dept get(@PathVariable("id") Long id)
@@ -34,5 +35,8 @@ public class DeptController_Consumer {
      return this.service.add(dept);
     }
 
-
+    @GetMapping("/dept/client")
+    public List<?> getClient() {
+        return service.clientList();
+    }
 }

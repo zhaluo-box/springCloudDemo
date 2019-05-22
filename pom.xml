@@ -28,6 +28,8 @@
         <module>zhaluocloud-provide-dept-8004</module>
         <module>zhaluocloud-consumer-dept-90</module>
         <module>zhaluocloud-consumer-dept-feign-91</module>
+        <module>zhaluocloud-provider-hystrix-6001</module>
+        <module>zhaluocloud-zuul-gateway-9007</module>
     </modules>
     <packaging>pom</packaging>
 
